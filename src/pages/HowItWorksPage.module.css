@@ -542,7 +542,7 @@
   font-weight: 900;
   letter-spacing: .04em;
   color: #fff;
-  box-shadow: 0 8px 0 var(--cr3), 0 2px 12px rgba(122, 30, 44, .4);
+  box-shadow: none;
 }
 
 .stepBadgeLabel {
@@ -1363,7 +1363,7 @@
   height: 16px;
   background: var(--cr);
   border-radius: 2px;
-  box-shadow: 0 0 0 4px rgba(122, 30, 44, .1), 0 4px 0 var(--cr3);
+  box-shadow: 0 0 0 4px rgba(122, 30, 44, .1);
 }
 
 .tTag {

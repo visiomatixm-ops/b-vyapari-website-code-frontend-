@@ -417,7 +417,7 @@
   font-weight: 800;
   color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 6px 0 var(--cr3), 0 2px 12px rgba(122,30,44,.3);
+  box-shadow: none;
 }
 .frName {
   font-size: 1rem;
@@ -685,7 +685,7 @@
   justify-content: center;
   margin-bottom: 20px;
   cursor: pointer;
-  box-shadow: 0 6px 0 var(--cr3), 0 2px 12px rgba(122,30,44,.35);
+  box-shadow: none;
   transition: transform .2s;
 }
 .vcPlay:hover {
@@ -814,7 +814,7 @@
   font-weight: 800;
   color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 5px 0 var(--cr3);
+  box-shadow: none;
 }
 .catRvBody {
   flex: 1;

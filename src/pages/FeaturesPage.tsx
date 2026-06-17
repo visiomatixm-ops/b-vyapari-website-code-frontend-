@@ -483,28 +483,28 @@ export default function FeaturesPage() {
             {/* Feature blocks */}
             <div className={styles.inv2Features}>
               <div className={`${styles.ifBlock} rv`}>
-                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#a32438,#7A1E2C)', boxShadow: '0 4px 0 #3a0a11,inset 0 1px 0 rgba(255,255,255,.1)' }}>
+                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#a32438,#7A1E2C)' }}>
                   <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" /></svg>
                 </div>
                 <div className={styles.ifBlockTitle}>Smart Reorder Alerts</div>
                 <div className={styles.ifBlockDesc}>Set minimum stock levels per product. B-Vyapari sends instant alerts via push notification, WhatsApp, or SMS when stock dips below threshold — so you never run out.</div>
               </div>
               <div className={`${styles.ifBlock} rv rv1`}>
-                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#15803d,#0a4a24)', boxShadow: '0 4px 0 #021a0c,inset 0 1px 0 rgba(255,255,255,.1)' }}>
+                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#15803d,#0a4a24)' }}>
                   <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
                 </div>
                 <div className={styles.ifBlockTitle}>Multi-Location Stock</div>
                 <div className={styles.ifBlockDesc}>Manage inventory across multiple branches or warehouses from one dashboard. Transfer stock between locations with a single click and full audit trail.</div>
               </div>
               <div className={`${styles.ifBlock} rv rv2`}>
-                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#1e40af,#0d1f5c)', boxShadow: '0 4px 0 #050e2a,inset 0 1px 0 rgba(255,255,255,.1)' }}>
+                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#1e40af,#0d1f5c)' }}>
                   <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                 </div>
                 <div className={styles.ifBlockTitle}>Barcode & QR Scanner</div>
                 <div className={styles.ifBlockDesc}>Scan product barcodes using your phone camera to instantly add items to bills or update stock. Works with all standard barcode formats.</div>
               </div>
               <div className={`${styles.ifBlock} rv rv3`}>
-                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#b45309,#7c3500)', boxShadow: '0 4px 0 #3a1800,inset 0 1px 0 rgba(255,255,255,.1)' }}>
+                <div className={styles.ifBlockIcon} style={{ background: 'linear-gradient(145deg,#b45309,#7c3500)' }}>
                   <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
                 </div>
                 <div className={styles.ifBlockTitle}>Bulk Import / Export</div>
@@ -752,7 +752,7 @@ export default function FeaturesPage() {
             {/* Feature list */}
             <div className={styles.repFeats}>
               <div className={`${styles.rfItem} rv`}>
-                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#a32438,#7A1E2C)', boxShadow: '0 5px 0 #3a0a11' }}>
+                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#a32438,#7A1E2C)' }}>
                   <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                 </div>
                 <div>
@@ -761,7 +761,7 @@ export default function FeaturesPage() {
                 </div>
               </div>
               <div className={`${styles.rfItem} rv rv1`}>
-                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#1e40af,#0d1f5c)', boxShadow: '0 5px 0 #050e2a' }}>
+                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#1e40af,#0d1f5c)' }}>
                   <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
                 </div>
                 <div>
@@ -770,7 +770,7 @@ export default function FeaturesPage() {
                 </div>
               </div>
               <div className={`${styles.rfItem} rv rv2`}>
-                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#15803d,#0a4a24)', boxShadow: '0 5px 0 #021a0c' }}>
+                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#15803d,#0a4a24)' }}>
                   <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
                 </div>
                 <div>
@@ -779,7 +779,7 @@ export default function FeaturesPage() {
                 </div>
               </div>
               <div className={`${styles.rfItem} rv rv3`}>
-                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#b45309,#7c3500)', boxShadow: '0 5px 0 #3a1800' }}>
+                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#b45309,#7c3500)' }}>
                   <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
                 </div>
                 <div>
@@ -788,7 +788,7 @@ export default function FeaturesPage() {
                 </div>
               </div>
               <div className={`${styles.rfItem} rv`}>
-                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#0d9488,#134e4a)', boxShadow: '0 5px 0 #042f2e' }}>
+                <div className={styles.rfIcon} style={{ background: 'linear-gradient(145deg,#0d9488,#134e4a)' }}>
                   <svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z" /><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" /><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z" /><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z" /><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z" /><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z" /><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z" /><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z" /></svg>
                 </div>
                 <div>
@@ -809,49 +809,49 @@ export default function FeaturesPage() {
           <p className={`${styles.secP} rv`}>B-Vyapari plugs into the apps your business already runs on — payments, accounting, e-commerce, and more.</p>
           <div className={styles.integGrid}>
             <div className={`${styles.integCard} rv`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#5f259f,#3d1063)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>📱</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#5f259f,#3d1063)' }}>📱</div>
               <div className={styles.integName}>PhonePe</div>
               <div className={styles.integDesc}>Accept UPI payments and auto-reconcile with invoices. Payment confirmation updates B-Vyapari instantly.</div>
               <div className={`${styles.integStatus} ${styles.isLive}`}><div className={`${styles.isDot} ${styles.dotLive}`}></div> Live</div>
             </div>
             <div className={`${styles.integCard} rv rv1`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#00a86b,#006b44)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>💚</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#00a86b,#006b44)' }}>💚</div>
               <div className={styles.integName}>Google Pay</div>
               <div className={styles.integDesc}>GPay UPI payments linked to invoices. Mark as paid automatically when payment is received on your UPI ID.</div>
               <div className={`${styles.integStatus} ${styles.isLive}`}><div className={`${styles.isDot} ${styles.dotLive}`}></div> Live</div>
             </div>
             <div className={`${styles.integCard} rv rv2`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#00a0e3,#005fa3)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>💙</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#00a0e3,#005fa3)' }}>💙</div>
               <div className={styles.integName}>Paytm</div>
               <div className={styles.integDesc}>Generate Paytm payment links inside invoices. All collections tracked in your B-Vyapari dashboard automatically.</div>
               <div className={`${styles.integStatus} ${styles.isLive}`}><div className={`${styles.isDot} ${styles.dotLive}`}></div> Live</div>
             </div>
             <div className={`${styles.integCard} rv rv3`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#1f9a3e,#0d5c22)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>📊</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#1f9a3e,#0d5c22)' }}>📊</div>
               <div className={styles.integName}>Tally ERP</div>
               <div className={styles.integDesc}>Sync B-Vyapari invoices and vouchers directly with Tally. No double data entry. Your CA will thank you.</div>
               <div className={`${styles.integStatus} ${styles.isBeta}`}><div className={`${styles.isDot} ${styles.dotBeta}`}></div> Beta</div>
             </div>
             <div className={`${styles.integCard} rv`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#25d366,#128c2e)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>💬</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#25d366,#128c2e)' }}>💬</div>
               <div className={styles.integName}>WhatsApp Business</div>
               <div className={styles.integDesc}>Send invoices, payment reminders, and offers via WhatsApp Business API. Verified sender badge included.</div>
               <div className={`${styles.integStatus} ${styles.isLive}`}><div className={`${styles.isDot} ${styles.dotLive}`}></div> Live</div>
             </div>
             <div className={`${styles.integCard} rv rv1`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#f97316,#c2410c)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>🛒</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#f97316,#c2410c)' }}>🛒</div>
               <div className={styles.integName}>Amazon / Flipkart</div>
               <div className={styles.integDesc}>Import online orders from Amazon Seller and Flipkart Seller. Auto-generate invoices and update inventory.</div>
               <div className={`${styles.integStatus} ${styles.isBeta}`}><div className={`${styles.isDot} ${styles.dotBeta}`}></div> Beta</div>
             </div>
             <div className={`${styles.integCard} rv rv2`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#2563eb,#1e3a8a)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>📧</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#2563eb,#1e3a8a)' }}>📧</div>
               <div className={styles.integName}>Email (SMTP)</div>
               <div className={styles.integDesc}>Send invoices directly from your own business email via Gmail, Outlook, or any SMTP provider. Fully branded.</div>
               <div className={`${styles.integStatus} ${styles.isLive}`}><div className={`${styles.isDot} ${styles.dotLive}`}></div> Live</div>
             </div>
             <div className={`${styles.integCard} rv rv3`}>
-              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#6366f1,#4338ca)', boxShadow: '0 4px 0 rgba(0,0,0,.2)' }}>🔗</div>
+              <div className={styles.integLogoBox} style={{ background: 'linear-gradient(145deg,#6366f1,#4338ca)' }}>🔗</div>
               <div className={styles.integName}>Shopify / WooCommerce</div>
               <div className={styles.integDesc}>Sync your online store with B-Vyapari. Orders auto-imported, inventory synced, GST invoices auto-generated.</div>
               <div className={`${styles.integStatus} ${styles.isSoon}`}><div className={`${styles.isDot} ${styles.dotSoon}`}></div> Coming Soon</div>

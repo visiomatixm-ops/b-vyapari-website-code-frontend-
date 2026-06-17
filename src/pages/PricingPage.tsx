@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './PricingPage.module.css'
+import Strip from '../components/Strip'
 
 export default function PricingPage() {
   const [isYearly, setIsYearly] = useState(false)
@@ -114,6 +115,8 @@ export default function PricingPage() {
           <span className={styles.saveBadge}>Save 20%</span>
         </div>
       </section>
+
+      <Strip />
 
       {/* PRICING CARDS */}
       <section className={styles.priceSection}>
