@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './HowItWorksPage.module.css'
-import Strip from '../components/Strip'
 
 export default function HowItWorksPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -128,16 +127,24 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <Strip />
-
       {/* ═══ OVERVIEW STRIP ═══ */}
       <div className={styles.overviewStrip}>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg></div><span className={styles.ovText}>60 seconds signup</span></div>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg></div><span className={styles.ovText}>No credit card needed</span></div>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" /></svg></div><span className={styles.ovText}>Works on mobile & desktop</span></div>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" /></svg></div><span className={styles.ovText}>English + Hindi support</span></div>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><span className={styles.ovText}>GST ready from day 1</span></div>
-        <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div><span className={styles.ovText}>Live dashboard instantly</span></div>
+        <div className={styles.overviewStripInner}>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg></div><span className={styles.ovText}>60 seconds signup</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg></div><span className={styles.ovText}>No credit card needed</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" /></svg></div><span className={styles.ovText}>Works on mobile & desktop</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" /></svg></div><span className={styles.ovText}>English + Hindi support</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><span className={styles.ovText}>GST ready from day 1</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div><span className={styles.ovText}>Live dashboard instantly</span></div>
+        </div>
+        <div className={styles.overviewStripInner} aria-hidden="true">
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg></div><span className={styles.ovText}>60 seconds signup</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg></div><span className={styles.ovText}>No credit card needed</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" /></svg></div><span className={styles.ovText}>Works on mobile & desktop</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" /></svg></div><span className={styles.ovText}>English + Hindi support</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><span className={styles.ovText}>GST ready from day 1</span></div>
+          <div className={styles.ovItem}><div className={styles.ovIcon}><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></div><span className={styles.ovText}>Live dashboard instantly</span></div>
+        </div>
       </div>
 
       {/* ═══ BIG 3 STEPS ═══ */}

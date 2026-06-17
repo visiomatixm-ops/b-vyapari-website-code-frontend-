@@ -416,12 +416,24 @@
 /* ══════════ OVERVIEW STRIP ══════════ */
 .overviewStrip {
   background: var(--cr3);
-  padding: 20px 56px;
+  padding: 20px 0;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.overviewStripInner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0;
-  overflow: hidden;
+  flex-shrink: 0;
+  min-width: 100%;
+  justify-content: space-around;
+  animation: overviewMarquee 30s linear infinite;
+}
+
+@keyframes overviewMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 .ovItem {
@@ -1762,20 +1774,9 @@
   .featuresBand,
   .faqStrip,
   .statsBand,
-  .ctaSec,
-  .overviewStrip {
+  .ctaSec {
     padding-left: 24px;
     padding-right: 24px;
-  }
-
-  .overviewStrip {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .ovItem {
-    border-right: none;
-    padding: 0;
   }
 
   .heroH1 {
