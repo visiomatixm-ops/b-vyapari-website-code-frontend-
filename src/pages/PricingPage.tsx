@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './PricingPage.module.css'
-import Strip from '../components/Strip'
 
 export default function PricingPage() {
   const [isYearly, setIsYearly] = useState(false)
@@ -116,7 +115,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <Strip />
+
 
       {/* PRICING CARDS */}
       <section className={styles.priceSection}>

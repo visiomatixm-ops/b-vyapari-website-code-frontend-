@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './ReviewsPage.module.css'
-import Strip from '../components/Strip'
 
 interface Review {
   category: string
@@ -271,7 +270,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <Strip />
+
 
       {/* FILTER BAR */}
       <div className={styles.filterBar}>
