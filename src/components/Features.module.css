@@ -1,0 +1,82 @@
+/* ===== FEATURES ===== */
+.features {
+  padding: 120px 60px;
+  background: #f5f3ef;
+  position: relative;
+}
+.sectionEyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A1E2C;
+  margin-bottom: 16px;
+}
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0a0a0a;
+  max-width: 520px;
+  margin-bottom: 80px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.featureCard {
+  background: #fafaf8;
+  padding: 40px 36px;
+  border: 1px solid #e8e5e0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+.featureCard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #7A1E2C;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.featureCard:hover::before { transform: scaleX(1); }
+.featureCard:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+
+.featureNum {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #7A1E2C;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+.featureIcon {
+  width: 48px; height: 48px;
+  background: #0a0a0a;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+  transition: background 0.25s;
+}
+.featureCard:hover .featureIcon { background: #7A1E2C; }
+.featureIcon svg { width: 22px; height: 22px; stroke: #fafaf8; stroke-width: 1.5; fill: none; }
+.featureName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.featureDesc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #666;
+}

@@ -1,0 +1,6 @@
+/* ─── SECTION BASE (legacy support) ─── */
+.section { padding: 120px 56px; }
+.sec-inner { max-width: 1200px; margin: 0 auto; }
+.eyebrow { font-family: 'Space Mono', monospace; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--cr); margin-bottom: 16px; }
+.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; color: var(--ink); max-width: 520px; margin-bottom: 48px; }
+.sec-title.w { color: #fff; }

@@ -1,0 +1,848 @@
+.pricingWrapper {
+  --cr: #7A1E2C;
+  --cr2: #9b2538;
+  --cr3: #5a1520;
+  --ink: #0c0c0c;
+  --w: #f8f7f4;
+  --w2: #f0ede8;
+  --g1: #222;
+  --g2: #444;
+  --g3: #888;
+  --g4: #bbb;
+  --g5: #ddd;
+
+  background: var(--ink);
+  color: #fff;
+  font-family: 'DM Sans', 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 0 0, 80px 80px, 80px 80px; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .2; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ─── HERO ─── */
+.pricingHero {
+  padding: 160px 56px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pricingHero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(122,30,44,.28) 0%, transparent 70%),
+    linear-gradient(rgba(122,30,44,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122,30,44,.07) 1px, transparent 1px);
+  background-size: 100% 100%, 80px 80px, 80px 80px;
+  animation: gridDrift 24s linear infinite;
+}
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0, 0 0 }
+  to { background-position: 0 0, 80px 80px, 80px 80px }
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border: 1px solid rgba(122,30,44,.5);
+  border-radius: 2px;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--cr2);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp .7s .1s forwards;
+}
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--cr);
+  border-radius: 50%;
+  animation: blink 1.8s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1 }
+  50% { opacity: .2 }
+}
+
+.pricingHero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  line-height: .92;
+  color: #fff;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp .8s .25s forwards;
+}
+.pricingHero h1 .cr {
+  color: var(--cr2);
+}
+.pricingHero h1 .outline {
+  -webkit-text-stroke: 1.5px rgba(255,255,255,.25);
+  color: transparent;
+}
+
+.pricingHero p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .4);
+  max-width: 480px;
+  margin: 0 auto 48px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp .8s .4s forwards;
+}
+.pricingHero p strong {
+  color: rgba(255, 255, 255, .8);
+  font-weight: 500;
+}
+
+/* ─── BILLING TOGGLE ─── */
+.toggleWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 80px;
+  opacity: 0;
+  animation: fadeUp .8s .55s forwards;
+}
+.toggleLabel {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .4);
+}
+.toggleLabel.on {
+  color: #fff;
+}
+.on {
+  /* Defined for local class output in modules */
+}
+.toggle {
+  width: 52px;
+  height: 28px;
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: background .3s;
+}
+.toggle.yearly {
+  background: var(--cr);
+  border-color: var(--cr);
+}
+.yearly {
+  /* Defined for local class output in modules */
+}
+.toggleKnob {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: transform .3s;
+}
+.toggle.yearly .toggleKnob {
+  transform: translateX(24px);
+}
+.saveBadge {
+  background: rgba(74, 222, 128, .12);
+  color: #4ade80;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+/* ─── PRICE GRID ─── */
+.priceSection {
+  padding: 0 56px 100px;
+  position: relative;
+}
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.priceCard {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), border-color .3s;
+}
+.priceCard:hover {
+  transform: translateY(-8px);
+  border-color: #333;
+}
+.priceCard.hot {
+  background: var(--cr);
+  border-color: var(--cr);
+  transform: scale(1.02);
+  z-index: 2;
+}
+.priceCard.hot:hover {
+  transform: scale(1.02) translateY(-8px);
+  border-color: var(--cr2);
+}
+.hot {
+  /* Defined for local class output in modules */
+}
+
+/* card shimmer */
+.priceCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .03) 0%, transparent 50%);
+  pointer-events: none;
+}
+.priceCard.hot::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .08) 0%, transparent 50%);
+}
+
+.hotBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, .15);
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.pcPlan {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 20px;
+}
+.priceCard.hot .pcPlan {
+  color: rgba(255, 255, 255, .55);
+}
+
+.pcAmount {
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -.06em;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.pcAmount sup {
+  font-size: 1.4rem;
+  vertical-align: super;
+  letter-spacing: 0;
+}
+
+.pcPer {
+  font-size: .72rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+.priceCard.hot .pcPer {
+  color: rgba(255, 255, 255, .5);
+}
+
+.pcSave {
+  font-size: .65rem;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: .06em;
+  margin-bottom: 32px;
+  min-height: 18px;
+}
+
+.pcDivider {
+  height: 1px;
+  background: #1e1e1e;
+  margin-bottom: 28px;
+}
+.priceCard.hot .pcDivider {
+  background: rgba(255, 255, 255, .12);
+}
+
+.pcFeats {
+  list-style: none;
+  margin-bottom: 36px;
+}
+.pcFeats li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .04);
+  font-size: .82rem;
+  color: #666;
+  line-height: 1.5;
+}
+.priceCard.hot .pcFeats li {
+  color: rgba(255, 255, 255, .8);
+  border-color: rgba(255, 255, 255, .1);
+}
+.pcFeats li:last-child {
+  border-bottom: none;
+}
+.pcFeats li svg {
+  width: 13px;
+  height: 13px;
+  stroke: #4ade80;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.priceCard:not(.hot) .pcFeats li.cross svg {
+  stroke: #f87171;
+}
+.priceCard:not(.hot) .pcFeats li.cross {
+  color: #2e2e2e;
+}
+.cross {
+  /* Defined for local class output in modules */
+}
+
+.pcBtn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #1a1a1a;
+  color: #666;
+  border: 1px solid #2a2a2a;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pcBtn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.pcBtn:hover::after {
+  transform: scaleX(1);
+}
+.pcBtn:hover {
+  color: var(--cr);
+}
+.pcBtn span {
+  position: relative;
+  z-index: 1;
+}
+.priceCard.hot .pcBtn {
+  background: #fff;
+  color: var(--cr);
+  border-color: #fff;
+}
+.priceCard.hot .pcBtn:hover::after {
+  background: rgba(255, 255, 255, .15);
+}
+.priceCard.hot .pcBtn:hover {
+  color: #fff;
+}
+
+/* ─── FEATURE COMPARE TABLE ─── */
+.compareSection {
+  padding: 80px 56px 100px;
+}
+.compareSection .secLabel {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cr2);
+  margin-bottom: 14px;
+}
+.compareSection h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 64px;
+}
+
+.compareTable {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.ctHeadRow th {
+  padding: 20px 24px;
+  text-align: center;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #1e1e1e;
+  vertical-align: bottom;
+}
+.ctHeadRow th:first-child {
+  text-align: left;
+}
+.thPlan {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: #fff;
+  margin-bottom: 4px;
+  text-transform: none;
+}
+.thPrice {
+  display: block;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--cr2);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.thHot {
+  color: var(--cr2);
+}
+.thHot .thPlan {
+  color: var(--cr);
+}
+
+.ctCatRow td {
+  padding: 20px 24px 10px;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #333;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.ctRow td {
+  padding: 14px 24px;
+  font-size: .82rem;
+  color: #666;
+  border-bottom: 1px solid #141414;
+  text-align: center;
+  vertical-align: middle;
+}
+.ctRow td:first-child {
+  text-align: left;
+  color: #999;
+}
+.ctRow:hover td {
+  background: rgba(255, 255, 255, .015);
+}
+
+.ctCheck {
+  color: #4ade80;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.ctCross {
+  color: #2a2a2a;
+  font-size: 1rem;
+}
+.ctVal {
+  color: #fff;
+  font-weight: 600;
+}
+.ctBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.badgeGreen {
+  background: rgba(74, 222, 128, .1);
+  color: #4ade80;
+}
+.badgeRed {
+  background: rgba(122, 30, 44, .2);
+  color: var(--cr2);
+}
+.ctHotCol {
+  background: rgba(122, 30, 44, .08);
+}
+
+/* ─── FAQ ─── */
+.faqSection {
+  padding: 80px 56px 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faqLabel {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cr2);
+  margin-bottom: 14px;
+}
+.faqTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  color: #fff;
+  margin-bottom: 56px;
+}
+.faqItem {
+  border-bottom: 1px solid #1a1a1a;
+  overflow: hidden;
+}
+.faqQ {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Sans', 'DM Sans', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .7);
+  cursor: pointer;
+  text-align: left;
+  transition: color .2s;
+  gap: 20px;
+}
+.faqQ:hover, .faqQ.open {
+  color: #fff;
+}
+.open {
+  /* Defined for local class output in modules */
+}
+.faqIcon {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: .85rem;
+  color: #444;
+  transition: all .3s;
+}
+.faqQ.open .faqIcon {
+  border-color: var(--cr);
+  color: var(--cr);
+  background: rgba(122, 30, 44, .1);
+}
+.faqA {
+  max-height: 0;
+  overflow: hidden;
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, .4);
+  transition: max-height .4s ease, padding .4s;
+}
+.faqA.open {
+  max-height: 200px;
+  padding-bottom: 22px;
+}
+
+/* ─── TRUST BAND ─── */
+.trustBand {
+  background: var(--cr3);
+  padding: 0 56px;
+  border-top: 1px solid rgba(122, 30, 44, .4);
+  border-bottom: 1px solid rgba(122, 30, 44, .4);
+}
+.trustInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.trustItem {
+  padding: 44px 0;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, .06);
+}
+.trustItem:last-child {
+  border-right: none;
+}
+.trustNum {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -.06em;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.trustNum span {
+  color: rgba(255, 255, 255, .5);
+}
+.trustLabel {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .35);
+}
+
+/* ─── CTA ─── */
+.ctaSec {
+  padding: 120px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ctaSec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(122, 30, 44, .3), transparent);
+  pointer-events: none;
+}
+.ctaInner {
+  position: relative;
+  z-index: 1;
+}
+.ctaTitle {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  color: #fff;
+  line-height: .95;
+  margin-bottom: 24px;
+}
+.ctaTitle span {
+  color: var(--cr2);
+}
+.ctaSub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .4);
+  margin-bottom: 48px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.ctaBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btnCtaMain {
+  padding: 16px 44px;
+  background: var(--cr);
+  border: 2px solid var(--cr);
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: all .2s;
+  cursor: pointer;
+}
+.btnCtaMain:hover {
+  background: var(--cr2);
+  border-color: var(--cr2);
+}
+.btnCtaSec {
+  padding: 16px 44px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .12);
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .88rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .4);
+  text-decoration: none;
+  transition: all .2s;
+  cursor: pointer;
+}
+.btnCtaSec:hover {
+  border-color: rgba(255, 255, 255, .4);
+  color: #fff;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #070707;
+  padding: 72px 56px 40px;
+  border-top: 1px solid rgba(255, 255, 255, .04);
+}
+.footerTop {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 56px;
+}
+.ftLogo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.ftLogo span {
+  color: var(--cr2);
+}
+.ftDesc {
+  font-size: .85rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #444;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+.ftContactList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  max-width: 320px;
+}
+.ftContactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .85rem;
+  color: #777;
+  line-height: 1.6;
+}
+.ftContactItem svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: #777;
+  fill: none;
+}
+.ftContactItem a {
+  color: #777;
+  text-decoration: none;
+  transition: color .2s;
+}
+.ftContactItem a:hover {
+  color: #fff;
+}
+.ftColTitle {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 20px;
+}
+.ftLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.ftLinks a {
+  font-size: .82rem;
+  font-weight: 400;
+  color: #444;
+  text-decoration: none;
+  transition: color .2s;
+}
+.ftLinks a:hover {
+  color: #fff;
+}
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid #111;
+}
+.fbLeft, .fbRight {
+  font-size: .7rem;
+  color: #333;
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width: 900px) {
+  .pricingHero, .priceSection, .compareSection, .faqSection, .trustBand, .ctaSec {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .priceGrid {
+    grid-template-columns: 1fr;
+  }
+  .priceCard.hot {
+    transform: none;
+  }
+  .priceCard.hot:hover {
+    transform: translateY(-8px);
+  }
+  .compareTable {
+    font-size: .75rem;
+  }
+  .trustInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+  }
+}

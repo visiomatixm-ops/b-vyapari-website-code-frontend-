@@ -1,0 +1,85 @@
+/* ─── FONTS ─── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+/* ─── RESET & ROOT ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --cr: #7A1E2C;
+  --cr2: #a32438;
+  --cr3: #550f1a;
+  --ink: #0a0a0a;
+  --white: #fafaf8;
+  --warm-white: #f5f3ef;
+  --light-gray: #e8e5e0;
+  --gray: #888;
+  /* legacy aliases */
+  --w: #fafaf8;
+  --w2: #f5f3ef;
+  --g3: #888;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--white); }
+::-webkit-scrollbar-thumb { background: var(--cr); border-radius: 2px; }
+
+/* ─── CURSOR ─── */
+.cursor-dot {
+  width: 12px; height: 12px;
+  background: var(--cr);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.2s, height 0.2s;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--cr);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease, opacity 0.3s;
+  opacity: 0.4;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes gridDrift { from { background-position: 0 0 } to { background-position: 80px 80px } }
+@keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1) } 50% { transform: translateY(-30px) scale(1.05) } }
+@keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: .2 } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: none } }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+
+/* ─── REVEAL ─── */
+.rv { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.rv.vis { opacity: 1; transform: none; }
+.rv-d1 { transition-delay: 0.1s; }
+.rv-d2 { transition-delay: 0.2s; }
+.rv-d3 { transition-delay: 0.3s; }
+
+/* Step reveal */
+.step-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s;
+}
+.step-item.vis { opacity: 1; transform: translateX(0); }
+
+/* Safety fallback — if JS reveal never fires, show content after 3s */
+@keyframes revealFallback { to { opacity: 1; transform: none; } }
+.rv:not(.vis) { animation: revealFallback 0s 3s forwards; }
+.step-item:not(.vis) { animation: revealFallback 0s 3s forwards; }

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0c0c0c"/>
+      <stop offset="50%" stop-color="#2a0a0e"/>
+      <stop offset="100%" stop-color="#0c0c0c"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle Grid Pattern in background -->
+  <path d="M 0 70 L 1200 70 M 0 140 L 1200 140 M 0 210 L 1200 210 M 0 280 L 1200 280 M 0 350 L 1200 350 M 0 420 L 1200 420 M 0 490 L 1200 490 M 0 560 L 1200 560" stroke="#7A1E2C" stroke-opacity="0.04" stroke-width="1"/>
+  <path d="M 120 0 L 120 630 M 240 0 L 240 630 M 360 0 L 360 630 M 480 0 L 480 630 M 600 0 L 600 630 M 720 0 L 720 630 M 840 0 L 840 630 M 960 0 L 960 630 M 1080 0 L 1080 630" stroke="#7A1E2C" stroke-opacity="0.04" stroke-width="1"/>
+
+  <!-- Logo Mark -->
+  <g transform="translate(540, 110) scale(1)">
+    <rect width="120" height="120" rx="20" fill="#7A1E2C"/>
+    <polygon points="22.6,21.8 52.4,21.8 37.5,51.5" fill="white" stroke="white" stroke-width="6" stroke-linejoin="round" />
+    <polygon points="67.6,21.8 97.4,21.8 82.5,51.5" fill="white" stroke="white" stroke-width="6" stroke-linejoin="round" />
+    <polygon points="45.1,61.8 74.9,61.8 60,91.5" fill="white" stroke="white" stroke-width="6" stroke-linejoin="round" />
+  </g>
+
+  <!-- Title Text -->
+  <text x="600" y="320" dominant-baseline="middle" text-anchor="middle" font-family="'Playfair Display', 'DM Sans', Inter, Arial, sans-serif" font-size="80" font-weight="900" fill="#ffffff">B-<tspan fill="#9b2538">Vyapari</tspan></text>
+  
+  <!-- Tagline Text -->
+  <text x="600" y="390" dominant-baseline="middle" text-anchor="middle" font-family="'DM Sans', Inter, Arial, sans-serif" font-size="32" font-weight="300" fill="#a3a3a3">Smart billing for every business</text>
+
+  <!-- Badge Details -->
+  <rect x="475" y="450" width="250" height="36" rx="18" fill="rgba(122,30,44,0.15)" stroke="rgba(122,30,44,0.4)" stroke-width="1"/>
+  <text x="600" y="468" dominant-baseline="middle" text-anchor="middle" font-family="'DM Sans', Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#9b2538" letter-spacing="2">INDIA'S #1 BILLING APP</text>
+</svg>

@@ -1,0 +1,123 @@
+/* ===== HOW IT WORKS ===== */
+.how {
+  padding: 120px 60px;
+  background: #fafaf8;
+}
+.sectionEyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A1E2C;
+  margin-bottom: 16px;
+}
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0a0a0a;
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+.howGrid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.step {
+  display: flex; gap: 24px;
+  margin-bottom: 36px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s;
+}
+:global(.vis).step { opacity: 1; transform: translateX(0); }
+.stepNum {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fafaf8;
+  background: #7A1E2C;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.stepContent h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0a0a0a;
+}
+.stepContent p { font-size: 0.875rem; line-height: 1.6; color: #666; }
+
+/* Phone mockup */
+.phoneFrame {
+  background: #0a0a0a;
+  border-radius: 32px;
+  padding: 12px;
+  max-width: 280px;
+  margin: 0 auto;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+  position: relative;
+}
+.phoneScreen {
+  background: #0f0f0f;
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 500px;
+}
+.phoneNotch {
+  height: 30px; background: #0a0a0a;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 22px 22px 0 0;
+}
+.notchPill {
+  width: 80px; height: 8px;
+  background: #1a1a1a; border-radius: 4px;
+}
+.phoneContent { padding: 16px; }
+.phoneHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+.phoneGreeting { font-size: 0.65rem; color: #666; }
+.phoneUsername { font-size: 0.85rem; font-weight: 600; color: #fafaf8; }
+.phoneAvatar {
+  width: 30px; height: 30px;
+  background: #7A1E2C;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; color: #fafaf8;
+}
+.phoneBalance {
+  background: linear-gradient(135deg, #550f1a, #7A1E2C);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.pbLabel { font-size: 0.6rem; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.pbAmount { font-family: 'Space Mono', monospace; font-size: 1.5rem; font-weight: 700; color: #fafaf8; }
+.pbSub { font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.phoneQuick {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  margin-bottom: 16px;
+}
+.quickBtn {
+  background: #1a1a1a; border-radius: 8px; padding: 10px 6px;
+  text-align: center;
+}
+.quickBtnIcon { font-size: 1rem; margin-bottom: 4px; }
+.quickBtnLabel { font-size: 0.5rem; color: #888; }
+.phoneRecentTitle { font-size: 0.65rem; font-weight: 600; color: #fafaf8; margin-bottom: 10px; letter-spacing: 0.06em; }
+.phoneTxn {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+.txnName { font-size: 0.7rem; color: #ccc; }
+.txnDate { font-size: 0.55rem; color: #555; }
+.txnAmt { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700; }
+.txnPlus { color: #4ade80; }
+.txnMinus { color: #f87171; }

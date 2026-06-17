@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME PAGE — Highest priority -->
+  <url>
+    <loc>https://bvyapari.in/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://bvyapari.in/" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://bvyapari.in/" />
+    <image:image>
+      <image:loc>https://bvyapari.in/og-image.svg</image:loc>
+      <image:caption>B-Vyapari and Visiomatix Media (visiomatix.in) — Smart Billing, GST Invoicing &amp; Inventory Management Software Dashboard for Vyapari</image:caption>
+      <image:title>B-Vyapari Billing App Dashboard by Visiomatix Media</image:title>
+      <image:geo_location>Chandvad, Nashik, Maharashtra, India</image:geo_location>
+      <image:license>https://bvyapari.in/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://bvyapari.in/favicon.png</image:loc>
+      <image:caption>B-Vyapari Logo - Empowering Indian Businesses by Visiomatix Media (visiomatix.in)</image:caption>
+      <image:title>B-Vyapari Logo - Visiomatix Media (visiomatix.in)</image:title>
+      <image:geo_location>Chandvad, Nashik, Maharashtra, India</image:geo_location>
+      <image:license>https://bvyapari.in/</image:license>
+    </image:image>
+    <mobile:mobile/>
+  </url>
+
+  <!-- FEATURES PAGE -->
+  <url>
+    <loc>https://bvyapari.in/features</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://bvyapari.in/features" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://bvyapari.in/features" />
+    <mobile:mobile/>
+  </url>
+
+  <!-- HOW IT WORKS PAGE -->
+  <url>
+    <loc>https://bvyapari.in/how-it-works</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://bvyapari.in/how-it-works" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://bvyapari.in/how-it-works" />
+    <mobile:mobile/>
+  </url>
+
+  <!-- PRICING PAGE -->
+  <url>
+    <loc>https://bvyapari.in/pricing</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://bvyapari.in/pricing" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://bvyapari.in/pricing" />
+    <mobile:mobile/>
+  </url>
+
+  <!-- REVIEWS PAGE -->
+  <url>
+    <loc>https://bvyapari.in/reviews</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://bvyapari.in/reviews" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://bvyapari.in/reviews" />
+    <mobile:mobile/>
+  </url>
+
+  <!-- LOGIN PAGE -->
+  <url>
+    <loc>https://bvyapari.in/login</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- START FREE PAGE -->
+  <url>
+    <loc>https://bvyapari.in/start-free</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <mobile:mobile/>
+  </url>
+
+</urlset>

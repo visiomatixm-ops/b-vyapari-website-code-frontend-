@@ -1,0 +1,53 @@
+# B-Vyapari — robots.txt
+# Site by Visiomatix Media Pvt. Ltd. | info@bvyapari.in
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /dist/assets/
+
+# Allow all major search bots explicitly
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://bvyapari.in/sitemap.xml
+
+# Host
+Host: bvyapari.in
