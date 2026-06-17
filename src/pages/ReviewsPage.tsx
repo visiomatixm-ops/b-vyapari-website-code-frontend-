@@ -51,12 +51,47 @@ export default function ReviewsPage() {
       { threshold: 0.1 }
     )
 
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement
+            const target = parseFloat(el.getAttribute('data-target') || '0')
+            const suffix = el.getAttribute('data-suffix') || ''
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10)
+            const duration = 1500
+            let startTime: number | null = null
+
+            const animate = (currentTime: number) => {
+              if (!startTime) startTime = currentTime
+              const progress = Math.min((currentTime - startTime) / duration, 1)
+              const easeProgress = progress * (2 - progress)
+              const value = easeProgress * target
+              el.innerHTML = value.toFixed(decimals) + `<span>${suffix}</span>`
+              if (progress < 1) {
+                requestAnimationFrame(animate)
+              }
+            }
+            requestAnimationFrame(animate)
+            countObserver.unobserve(el)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
     if (videoGridRef.current) videoObserver.observe(videoGridRef.current)
     if (ratingSummaryRef.current) barsObserver.observe(ratingSummaryRef.current)
+
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.js-count-up').forEach((el) => countObserver.observe(el))
+    }, 100)
 
     return () => {
       videoObserver.disconnect()
       barsObserver.disconnect()
+      countObserver.disconnect()
+      clearTimeout(timer)
     }
   }, [])
 
@@ -214,20 +249,20 @@ export default function ReviewsPage() {
             </div>
             <div className={styles.rsSplits}>
               <div className={styles.rsSplit}>
-                <div className={styles.rsSplitNum}>
-                  10K<span>+</span>
+                <div className={`${styles.rsSplitNum} js-count-up`} data-target="10" data-suffix="K+">
+                  0<span>K+</span>
                 </div>
-                <div className={styles.rsSplitLabel}>Active Users</div>
+                <div className={styles.rsSplitLabel}>Active Businesses</div>
               </div>
               <div className={styles.rsSplit}>
-                <div className={styles.rsSplitNum}>
-                  250L<span>+</span>
+                <div className={`${styles.rsSplitNum} js-count-up`} data-target="250" data-suffix="L+">
+                  0<span>L+</span>
                 </div>
                 <div className={styles.rsSplitLabel}>Bills Generated</div>
               </div>
               <div className={styles.rsSplit}>
-                <div className={styles.rsSplitNum}>
-                  28<span>+</span>
+                <div className={`${styles.rsSplitNum} js-count-up`} data-target="28" data-suffix="+">
+                  0<span>+</span>
                 </div>
                 <div className={styles.rsSplitLabel}>States Covered</div>
               </div>
@@ -403,27 +438,37 @@ export default function ReviewsPage() {
       {/* TRUST STRIP */}
       <div className={styles.trustStrip}>
         <div className={styles.tsItem}>
-          <div className={styles.tsNum}>10,000+</div>
+          <div className={`${styles.tsNum} js-count-up`} data-target="10000" data-suffix="+">
+            0<span>+</span>
+          </div>
           <div className={styles.tsLabel}>Active Businesses</div>
         </div>
         <div className={styles.tsDivider}></div>
         <div className={styles.tsItem}>
-          <div className={styles.tsNum}>4.9 / 5</div>
+          <div className={`${styles.tsNum} js-count-up`} data-target="4.9" data-suffix=" / 5" data-decimals="1">
+            0<span> / 5</span>
+          </div>
           <div className={styles.tsLabel}>Average Rating</div>
         </div>
         <div className={styles.tsDivider}></div>
         <div className={styles.tsItem}>
-          <div className={styles.tsNum}>12,480</div>
+          <div className={`${styles.tsNum} js-count-up`} data-target="12480" data-suffix="">
+            0
+          </div>
           <div className={styles.tsLabel}>Verified Reviews</div>
         </div>
         <div className={styles.tsDivider}></div>
         <div className={styles.tsItem}>
-          <div className={styles.tsNum}>92%</div>
+          <div className={`${styles.tsNum} js-count-up`} data-target="92" data-suffix="%">
+            0<span>%</span>
+          </div>
           <div className={styles.tsLabel}>Give 5 Stars</div>
         </div>
         <div className={styles.tsDivider}></div>
         <div className={styles.tsItem}>
-          <div className={styles.tsNum}>28+</div>
+          <div className={`${styles.tsNum} js-count-up`} data-target="28" data-suffix="+">
+            0<span>+</span>
+          </div>
           <div className={styles.tsLabel}>States Covered</div>
         </div>
       </div>

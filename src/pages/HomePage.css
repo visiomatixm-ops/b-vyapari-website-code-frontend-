@@ -362,9 +362,7 @@ footer{background:#070707;padding:72px 56px 40px;border-top:1px solid rgba(255,2
   .dash-card { transform: none !important; }
   .fc1, .fc2 { display: none; }
 
-  /* STRIP: scrollable */
-  .strip { overflow-x: auto; justify-content: flex-start; }
-  .strip-inner { gap: 40px; }
+
 
   /* FEATURES: 2 columns */
   .features-grid { grid-template-columns: repeat(2,1fr); }
