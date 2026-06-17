@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './HowItWorksPage.module.css'
+import Strip from '../components/Strip'
 
 export default function HowItWorksPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -126,6 +127,8 @@ export default function HowItWorksPage() {
           <span>Scroll to explore</span>
         </div>
       </section>
+
+      <Strip />
 
       {/* ═══ OVERVIEW STRIP ═══ */}
       <div className={styles.overviewStrip}>

@@ -1,4 +1,39 @@
-.strip { background: var(--cr3); padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
-.stripInner { display: flex; gap: 64px; align-items: center; }
-.stripItem { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); white-space: nowrap; }
-.stripSep { width: 4px; height: 4px; background: rgba(255,255,255,.15); border-radius: 50%; flex-shrink: 0; }
+.strip {
+  background: var(--cr3);
+  padding: 18px 0;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.stripInner {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+  justify-content: space-around;
+  animation: marquee 20s linear infinite;
+}
+
+.stripItem {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .3);
+  white-space: nowrap;
+}
+
+.stripSep {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, .15);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
