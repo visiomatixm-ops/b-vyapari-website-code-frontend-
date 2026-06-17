@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './HowItWorksPage.module.css'
-import Strip from '../components/Strip'
 
 export default function HowItWorksPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -31,8 +30,7 @@ export default function HowItWorksPage() {
       scObserver.observe(setupCardsRef.current)
     }
 
-    // Count-up animation observer
-    const countUpObserver = new IntersectionObserver(
+    const countObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -54,18 +52,21 @@ export default function HowItWorksPage() {
               }
             }
             requestAnimationFrame(animate)
-            countUpObserver.unobserve(el)
+            countObserver.unobserve(el)
           }
         })
       },
       { threshold: 0.1 }
     )
 
-    document.querySelectorAll('.js-count-up').forEach((el) => countUpObserver.observe(el))
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.js-count-up').forEach((el) => countObserver.observe(el))
+    }, 100)
 
     return () => {
       scObserver.disconnect()
-      countUpObserver.disconnect()
+      countObserver.disconnect()
+      clearTimeout(timer)
     }
   }, [])
 
@@ -125,8 +126,6 @@ export default function HowItWorksPage() {
           <span>Scroll to explore</span>
         </div>
       </section>
-
-      <Strip />
 
       {/* ═══ OVERVIEW STRIP ═══ */}
       <div className={styles.overviewStrip}>
@@ -517,22 +516,10 @@ export default function HowItWorksPage() {
       {/* ═══ STATS BAND ═══ */}
       <div className={styles.statsBand}>
         <div className={styles.statsGrid}>
-          <div className={`${styles.sbItem} rv`}>
-            <div className={`${styles.sbNum} js-count-up`} data-target="10" data-suffix="K+">0<span>K+</span></div>
-            <div className={styles.sbLabel}>Active Businesses</div>
-          </div>
-          <div className={`${styles.sbItem} rv ${styles.rvD1}`}>
-            <div className={`${styles.sbNum} js-count-up`} data-target="250" data-suffix="L+">0<span>L+</span></div>
-            <div className={styles.sbLabel}>Bills Generated</div>
-          </div>
-          <div className={`${styles.sbItem} rv ${styles.rvD2}`}>
-            <div className={`${styles.sbNum} js-count-up`} data-target="99.9" data-suffix="%" data-decimals="1">0<span>%</span></div>
-            <div className={styles.sbLabel}>Platform Uptime</div>
-          </div>
-          <div className={`${styles.sbItem} rv ${styles.rvD3}`}>
-            <div className={`${styles.sbNum} js-count-up`} data-target="4.9" data-suffix="★" data-decimals="1">0<span>★</span></div>
-            <div className={styles.sbLabel}>App Store Rating</div>
-          </div>
+          <div className={`${styles.sbItem} rv`}><div className={`${styles.sbNum} js-count-up`} data-target="10" data-suffix="K+">0<span>K+</span></div><div className={styles.sbLabel}>Active Businesses</div></div>
+          <div className={`${styles.sbItem} rv ${styles.rvD1}`}><div className={`${styles.sbNum} js-count-up`} data-target="250" data-suffix="L+">0<span>L+</span></div><div className={styles.sbLabel}>Bills Generated</div></div>
+          <div className={`${styles.sbItem} rv ${styles.rvD2}`}><div className={`${styles.sbNum} js-count-up`} data-target="99.9" data-suffix="%" data-decimals="1">0<span>%</span></div><div className={styles.sbLabel}>Platform Uptime</div></div>
+          <div className={`${styles.sbItem} rv ${styles.rvD3}`}><div className={`${styles.sbNum} js-count-up`} data-target="4.9" data-suffix="★" data-decimals="1">0<span>★</span></div><div className={styles.sbLabel}>App Store Rating</div></div>
         </div>
       </div>
 

@@ -11,6 +11,44 @@ export default function LoginPage() {
     if (desc) {
       desc.setAttribute('content', 'Sign in to your B-Vyapari account to manage invoices, check inventory stock, view sales analytics, and download GSTR reports.')
     }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement
+            const target = parseFloat(el.getAttribute('data-target') || '0')
+            const suffix = el.getAttribute('data-suffix') || ''
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10)
+            const duration = 1500
+            let startTime: number | null = null
+
+            const animate = (currentTime: number) => {
+              if (!startTime) startTime = currentTime
+              const progress = Math.min((currentTime - startTime) / duration, 1)
+              const easeProgress = progress * (2 - progress)
+              const value = easeProgress * target
+              el.innerHTML = value.toFixed(decimals) + `<span>${suffix}</span>`
+              if (progress < 1) {
+                requestAnimationFrame(animate)
+              }
+            }
+            requestAnimationFrame(animate)
+            observer.unobserve(el)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.js-count-up').forEach((el) => observer.observe(el))
+    }, 100)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(timer)
+    }
   }, [])
 
   const [showPassword, setShowPassword] = useState(false)
@@ -56,9 +94,9 @@ export default function LoginPage() {
           </div>
 
           <div className={styles.stats}>
-            <div><strong>50K<span>+</span></strong><small>Active Businesses</small></div>
-            <div><strong>₹200<span>Cr+</span></strong><small>Bills Generated</small></div>
-            <div><strong>4.9<span>★</span></strong><small>App Store Rating</small></div>
+            <div><strong className="js-count-up" data-target="10" data-suffix="K+">0<span>K+</span></strong><small>Active Businesses</small></div>
+            <div><strong className="js-count-up" data-target="250" data-suffix="L+">0<span>L+</span></strong><small>Bills Generated</small></div>
+            <div><strong className="js-count-up" data-target="4.9" data-suffix="★" data-decimals="1">0<span>★</span></strong><small>App Store Rating</small></div>
           </div>
         </div>
       </section>

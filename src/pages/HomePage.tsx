@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import './HomePage.css'
-import Strip from '../components/Strip'
 
 export default function HomePage() {
   useEffect(() => {
@@ -50,7 +49,7 @@ export default function HomePage() {
     }
   }, [])
 
-  const htmlHero = `
+  const html = `
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-noise"></div>
@@ -134,9 +133,46 @@ export default function HomePage() {
     </div>
   </div>
 </section>
-`
 
-  const htmlContent = `
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">GST Billing</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Inventory Management</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Payment Tracking</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Sales Reports</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">WhatsApp Integration</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Multi-Branch</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Cloud Sync</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">UPI Payments</span>
+    <span class="strip-sep"></span>
+  </div>
+  <div class="strip-inner" aria-hidden="true">
+    <span class="strip-item">GST Billing</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Inventory Management</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Payment Tracking</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Sales Reports</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">WhatsApp Integration</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Multi-Branch</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">Cloud Sync</span>
+    <span class="strip-sep"></span>
+    <span class="strip-item">UPI Payments</span>
+    <span class="strip-sep"></span>
+  </div>
+</div>
+
 <section class="section features-sec" id="features">
   <div class="sec-inner">
     <p class="eyebrow rv">Everything You Need</p>
@@ -266,13 +302,9 @@ export default function HomePage() {
       <a href="/start-free" class="btn-cta-main">Start Free Trial</a>
       <a href="/features" class="btn-cta-sec">View All Features</a>
     </div>
+  </div>
 </section>
 `
-  return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: htmlHero }} />
-      <Strip />
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-    </div>
-  )
+
+  return <div dangerouslySetInnerHTML={{ __html: html }} />
 }
